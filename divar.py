@@ -26,7 +26,10 @@ class DivarScraper:
 
     def search_ads(self, search_query):
         print(f"Opening Divar website...")
-        self.driver.get("https://divar.ir/s/tehran")
+        baseUrl = input("Enter the base URL: ")
+        if baseUrl == '':
+            baseUrl = "https://divar.ir/s/tehran"
+        self.driver.get(baseUrl)
         time.sleep(2)
 
         print(f"Searching for '{search_query}'...")
